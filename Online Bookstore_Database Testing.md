@@ -232,7 +232,7 @@ interface BookGenre{
 
 ```
 
---For Customer:
+--For Customer: Bibek Rai 
 
 async function createCustomerTbl(firstName: string, lastName: string, email: string, password: string) {
   return db.one(`INSERT INTO Customer (FirstName, LastName, Email, Password) VALUES ($1, $2, $3, $4) RETURNING *`, [firstName, lastName, email, password]);
@@ -257,7 +257,7 @@ async function deleteCustomerTbl(customerID: number) {
 ```
 
 
---For Author:
+--For Author: Rishi Chourasia
 ```
 async function createAuthorTbl(name: string, email: string, phone: string) {
   return db.one(`INSERT INTO Author (Name, Email, Phone) VALUES ($1, $2, $3) RETURNING *`, [name, email, phone]);
@@ -281,7 +281,7 @@ async function deleteAuthorTbl(authorID: number) {
 ```
 
 
---For Books:
+--For Books: Bibek Rai
 ```
 async function createBookTbl(title: string, authorID: number, genre: string, price: number, publicationDate: Date, rating: number) {
   return db.one(`INSERT INTO Books (Title, AuthorID, Genre, Price, PublicationDate, Rating) 
@@ -311,7 +311,7 @@ async function deleteBookTbl(bookID: number) {
 ```
 
 
---For Review:
+--For Review: Bibek Rai
 ```
 async function createReviewTbl(bookID: number, customerID: number, userComment: string, ratingNum: number, reviewTime: Date) {
   return db.one(`INSERT INTO Review (BookID, CustomerID, UserComment, RatingNum, ReviewTime) 
@@ -340,7 +340,7 @@ async function deleteReviewTbl(reviewID: number) {
 ```
 
 
--- For Sales
+-- For Sales Rishi Chourasia
 ```
 async function createSaleTbl(customerID: number, bookID: number, saleTime: Date, saleAmount: number, quantity: number) {
   return db.one(`INSERT INTO Sales (CustomerID, BookID, SaleTime, SaleAmount, Quantity) 
@@ -369,7 +369,7 @@ async function deleteSaleTbl(salesID: number) {
 
 ```
 
--- For BookGenre
+-- For BookGenre Rishi Chourasia
 ```
 async function createBookGenreTbl(genre: string, authorID: number, bookNum: number) {
   return db.one(`INSERT INTO BookGenre (Genre, AuthorID, BookNum) 
